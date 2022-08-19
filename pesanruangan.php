@@ -55,99 +55,159 @@
             <p class="p-text">Ruangan</p>
         </div>
         <div class="main">
-            <div class="container">
-                <div id="rcorners1">
-                    <form action="#">
-                        <div class="row">
-                            <div class="col-md-2">
-                                <div class="form-group">
-                                    <label for="Nomor Ruangan">Nomor Ruangan:</label>
-                                    <input type="number" class="form-control" id="noruangan" required>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="form-group">
-                                <label for="Tema">Tema:</label>
-                                    <input type="text" class="form-control" id="tema" required>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="form-group">
-                                <label for="Sewa Weekdays">Sewa per Jam (Weekdays):</label>
-                                    <input type="number" class="form-control-plaintext" id="sewa" placeholder="Rp 10.000 / Jam" readonly>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="Sewa Weekend">Sewa per Jam (Weekend):</label>
-                                    <input type="number" class="form-control-plaintext" id="sewa" placeholder="Rp 50.000 / Jam" readonly>
-                                </div>
-                            </div>
-                        </div>
-                            <div class="text-right">
-                                <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#modalconfirm">Pesan Ruangan</button>
-                            </div>
-                            <!-- The Modal -->
-                            <div class="modal fade" id="modalconfirm">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        
-                                        <!-- Modal Header -->
-                                        <div class="modal-header">
-                                        <h4 class="modal-title">Pesan Ruangan</h4>
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <div class="container bg-dark" style="margin-top: 20px">
+                <ul class="nav nav-pills nav-justified" id="pills-tab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active bg-dark text-light" id="ruangan-tab" data-toggle="pill" href="#pills-ruangan" role="tab" aria-controls="pills-ruangan" aria-selected="true">Ruangan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link bg-dark text-light" id="order-tab" data-toggle="pill" href="#pills-order" role="tab" aria-controls="pills-order" aria-selected="false">Order Studio</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-ruangan" role="tabpanel" aria-labelledby="ruangan-tab">
+                    <div class="container">
+                        <div id="rcorners1">
+                            <form action="#">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label for="Nomor Ruangan">Nomor Ruangan:</label>
+                                            <input type="number" class="form-control" id="noruangan" required>
                                         </div>
-                                            
-                                        <!-- Modal body -->
-                                        <div class="modal-body">
-                                            Apakah anda yakin ingin menyimpan?
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                        <label for="Tema">Tema:</label>
+                                            <input type="text" class="form-control" id="tema" required>
                                         </div>
-                                            
-                                        <!-- Modal footer -->
-                                        <div class="modal-footer">
-                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
-                                        <button type="button" class="btn btn-success" data-dismiss="modal">Simpan</button>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                        <label for="Sewa Weekdays">Sewa per Jam (Weekdays):</label>
+                                            <input type="number" class="form-control-plaintext" id="sewa" placeholder="Rp 10.000 / Jam" readonly>
                                         </div>
-                                            
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="Sewa Weekend">Sewa per Jam (Weekend):</label>
+                                            <input type="number" class="form-control-plaintext" id="sewa" placeholder="Rp 50.000 / Jam" readonly>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                    </form>
+                                    <div class="text-right">
+                                        <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#modalconfirm">Pesan Ruangan</button>
+                                    </div>
+                                    <!-- The Modal -->
+                                    <div class="modal fade" id="modalconfirm">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                <h4 class="modal-title">Pesan Ruangan</h4>
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+                                                    
+                                                <!-- Modal body -->
+                                                <div class="modal-body">
+                                                    Apakah anda yakin ingin menyimpan?
+                                                </div>
+                                                    
+                                                <!-- Modal footer -->
+                                                <div class="modal-footer">
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
+                                                <button type="button" class="btn btn-success" data-dismiss="modal">Simpan</button>
+                                                </div>
+                                                    
+                                            </div>
+                                        </div>
+                                    </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="container" id="container-table">
+                        <h4>List Transaksi</h4>
+                        <div class="table-responsive" style="margin-top: 10px;">
+                            <table class="table table-bordered table-hover datatab" style="width: 100%">
+                                <thead class="custom-thead-bg">
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Nomor Ruangan</th>
+                                        <th>Tema</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Ruangan 4</td>
+                                        <td>Valentine</td>
+                                        <td>
+                                            <button type="submit" class="btn btn-danger">Hapus</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Ruangan 10</td>
+                                        <td>Pre-Wedding</td>
+                                        <td>
+                                            <button type="submit" class="btn btn-danger">Hapus</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="container" id="container-table">
-                <h4>List Transaksi</h4>
-                <div class="table-responsive" style="margin-top: 10px;">
-                    <table class="table table-bordered table-hover datatab" style="width: 100%">
-                        <thead class="custom-thead-bg">
-                            <tr>
-                                <th>No</th>
-                                <th>Nomor Ruangan</th>
-                                <th>Tema</th>
-                                <th>Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Ruangan 4</td>
-                                <td>Valentine</td>
-                                <td>
-                                    <button type="submit" class="btn btn-danger">Hapus</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Ruangan 10</td>
-                                <td>Pre-Wedding</td>
-                                <td>
-                                    <button type="submit" class="btn btn-danger">Hapus</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="tab-pane fade" id="pills-order" role="tabpanel" aria-labelledby="order-tab">
+                    <div class="text-center" style="margin-top:30px;">
+                        <button type="button" class="btn btn-primary" onclick="location.href='pesanstudiobs.php'">+ Order Studio</button>
+                    </div>
+                    <div class="container" id="container-table">
+                        <h4>List Order Studio</h4>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover datatab" style="width: 100%">
+                                <thead class="custom-thead-bg">
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Order ID</th>
+                                        <th>Nama Pelanggan</th>
+                                        <th>Tanggal Order</th>
+                                        <th>Jam Mulai</th>
+                                        <th>Jam Selesai</th>
+                                        <th>Ruangan</th>
+                                        <th>Tema</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>2398G20J9GJ</td>
+                                        <td>David</td>
+                                        <td>25/07/2022</td>
+                                        <td>07:00</td>
+                                        <td>10:00</td>
+                                        <td>Ruangan 5</td>
+                                        <td>Valentine</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>0Q8J023419GJ</td>
+                                        <td>David Riski</td>
+                                        <td>25/07/2022</td>
+                                        <td>07:00</td>
+                                        <td>13:00</td>
+                                        <td>Ruangan 2</td>
+                                        <td>Pre Wedding</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </div>    
         </div>
 
     <script>
